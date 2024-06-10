@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eframe App</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        canvas {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+
+<link rel="modulepreload" href="https://removingnest109.github.io/eframe-aes-gui/eframe_test-cef4343ad733b001.js" crossorigin=anonymous integrity="sha384-EO54uEX2KEZBnUj5As4Kv/W+PDEmbQ/zr/P3nRiCz3pCT5KbEyHrHAC8MU89lXJP">
+<link rel="preload" href="https://removingnest109.github.io/eframe-aes-gui/eframe_test-cef4343ad733b001_bg.wasm" crossorigin=anonymous integrity="sha384-gSZv16Eqi/MYdRPsR3kCV8Rrgya6urKNIvNkd5FlxWsc5qF5IdShOwR+6HpDAJTL" as="fetch" type="application/wasm"></head>
+<body>
+    <canvas id="the_canvas_id"></canvas>
+    <script type="module">
+        import init from './pkg/your_project_name.js';
+        init();
+    </script>
+
+<script type="module" nonce="xlU4P5M82oLsfXZ6njKZZw==">
+import init, * as bindings from 'https://removingnest109.github.io/eframe-aes-gui/eframe_test-cef4343ad733b001.js';
+const wasm = await init('https://removingnest109.github.io/eframe-aes-gui/eframe_test-cef4343ad733b001_bg.wasm');
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script></body>
+</html>
