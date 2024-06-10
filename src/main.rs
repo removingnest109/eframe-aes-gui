@@ -28,18 +28,22 @@ fn main() -> eframe::Result<()> {
 #[cfg(target_arch = "wasm32")]
 fn main() {
     use eframe::WebOptions;
+    use eframe_test::MyApp;
     use wasm_bindgen::prelude::*;
     use wasm_bindgen_futures::spawn_local;
-    use eframe_test::MyApp;
-    
+
     #[wasm_bindgen(start)]
     pub fn start() {
         let web_options = WebOptions::default();
 
         spawn_local(async {
-            eframe::start_web("the_canvas_id", web_options, Box::new(|_cc| Box::new(MyApp::default())))
-                .await
-                .expect("failed to start eframe");
+            eframe::start_web(
+                "the_canvas_id",
+                web_options,
+                Box::new(|_cc| Box::new(MyApp::default())),
+            )
+            .await
+            .expect("failed to start eframe");
         });
     }
 }
